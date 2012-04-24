@@ -1,0 +1,23 @@
+The Floppy Game
+================
+
+In this game, try to dodge/shield against the bullets while killing enemies.
+Shielding from bullets increases your ships heat.
+If your ship overheats it will no longer be able to move.
+If your ship runs out of energy it will not be able to shield or fire.
+
+--------------------------
+Controls
+
+WASD move the ship around.
+J fires lasers
+K shields
+L vents heat
+U random lasers
+
+-----------------
+Building the game
+
+This is just a simple game I created in my free time.
+To build it, simply use ant on the file "ant.xml" with the "dist" flag.
+The game should be located in the "dist" directory after building.
