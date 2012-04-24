@@ -2,18 +2,20 @@ The Floppy Game
 ================
 
 In this game, try to dodge/shield against the bullets while killing enemies.
-Shielding from bullets increases your ships heat.
+Shielding from bullets and firing lasers increases your ships heat.
 If your ship overheats it will no longer be able to move.
 If your ship runs out of energy it will not be able to shield or fire.
+The game currently only has two levels in it.
+
 
 --------------------------
 Controls
 
-WASD move the ship around.
-J fires lasers
-K shields
-L vents heat
-U random lasers
+WASD - move the ship around.
+J    - fires lasers
+U    - random lasers
+K    - shields
+L    - vents heat
 
 -----------------
 Building the game
