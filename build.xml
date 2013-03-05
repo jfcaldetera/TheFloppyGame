@@ -4,6 +4,7 @@
   <property name="build" location="build"/>
   <property name="dist"  location="dist"/>
 
+  <!--init-->
   <target name="init">
     <mkdir dir="${build}"/>
   </target>
@@ -12,6 +13,7 @@
     <javac srcdir="${src}" destdir="${build}" includeantruntime="false"/>
   </target>
 
+  <!--build-->
   <target name="build" depends="compile">
     <copy todir="${build}/laserGame">
       <fileset dir="${src}/laserGame">
@@ -20,6 +22,7 @@
     </copy>
   </target>
 
+  <!--dist-->
   <target name="dist" depends="build">
     <mkdir dir="${dist}"/>
     <mkdir dir="${build}/META-INF"/>
@@ -29,6 +32,7 @@
     <jar jarfile="${dist}/TheFloppyGame.jar" basedir="${build}" manifest="${build}/META-INF/MANIFEST.MF"/>
   </target>
 
+  <!--clean-->
   <target name="clean">
     <delete dir="${build}"/>
     <delete dir="${dist}"/>
