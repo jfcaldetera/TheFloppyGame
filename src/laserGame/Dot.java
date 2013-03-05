@@ -30,11 +30,17 @@ public class Dot {
     /**
      * Constructs a Dot at (X,Y)
      * @param b
-     *  The boolean value determining whether the dot is going down or not.
+     *  The boolean value determining whether the dot is going evil or not.
      * @param xx
      *  The X Coordinate for the Dot
      * @param yy
      *  The Y Coordinate for the Dot
+     * @param xc
+     *  The amount the X Coordinate changes by each frame.
+     * @param yc
+     *  The amount the Y Coordinate changes by each frame.
+     * @param s
+     *  The color of the dot to fire (red, green blue).
      */
     public Dot(boolean b, int xx, int yy, int xc, int yc, String s){
         isBad=b;

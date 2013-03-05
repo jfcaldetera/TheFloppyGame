@@ -44,7 +44,8 @@ public class GamePanel extends JPanel{
         lose = false;
         lvl = ll;
         background = lvl.getBackground();
-        
+
+        //Make below dynamic in future
         ship = Toolkit.getDefaultToolkit().getImage(
                 this.getClass().getResource("images/blueShip.png"));
 
@@ -67,7 +68,6 @@ public class GamePanel extends JPanel{
 
         energyContainerNum=2000;
         heatContainerNum=0;
-        
 
         tracker = new MediaTracker(this);
         tracker.addImage(background,0);
@@ -81,6 +81,7 @@ public class GamePanel extends JPanel{
         try {
             tracker.waitForAll();
         } catch (InterruptedException ex) {}
+        //End of content to be dynamic
 
         this.setSize(800,750);
 

@@ -442,7 +442,7 @@ public class Player extends Character{
         if(heat>=6)
             heat-=6;
         else if(heat<6)
-            heat-=heat;
+            heat=0;
 
         if(shielded){
             energy-=4;

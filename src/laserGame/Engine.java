@@ -27,8 +27,6 @@ public class Engine implements KeyListener{
 
     private GameFrame frame;
     private GamePanel panel;
-    /*hitList removes the bullets that hit their target,
-     used so that the bullet can hit multiple enemies without a concurrent modification execption.*/
     private LinkedList<Dot> dotList;
     private ArrayList<Enemy> enemies;
     private Player pl;
@@ -81,7 +79,7 @@ public class Engine implements KeyListener{
         this.manageDots();
         this.managePanel();
 
-        //IMPORTANT:Player Bullet Fire
+        //Player Bullet Fire
         if(pl.isFiring())
             this.newPlayerDot();
         if(pl.isRandomFiring())
@@ -94,7 +92,7 @@ public class Engine implements KeyListener{
                 it.remove();
         }
         
-        //IMPORTANT:Removing off screen enemies
+        //Removing off screen enemies
         for(int i=0;i<enemies.size();i++){
             Enemy e = enemies.get(i);
             if(e.isInitial()==false){
@@ -107,7 +105,7 @@ public class Engine implements KeyListener{
                 
         }
 
-        //IMPORTANT: Events being called and used
+        //Events being called and used
         if(events.size()==0 && enemies.size()<1 && isComplete==false && isLast==true){
                 isComplete=true;
                 this.nextLevel();
@@ -127,7 +125,7 @@ public class Engine implements KeyListener{
             time++;
         }
 
-        //IMPORTANT: player step method called
+        //Player step method called
         pl.step();
     }
 
@@ -224,7 +222,6 @@ public class Engine implements KeyListener{
     public void manageDots(){
 
         
-        //IMPORTANT SECTION
         //Checks to see if dot is hitting enemy, and increments if not.
         Iterator<Dot> it = dotList.iterator();
         while(it.hasNext()){
@@ -245,7 +242,7 @@ public class Engine implements KeyListener{
                 if(!tmpDot.isBad()){
                   if(enemies.size()>0){
                     for(int c=0;c<enemies.size();c++){
-                        if(this.isHitting(tmpDot,enemies.get(c))==true){
+                        if(this.checkHit(tmpDot, enemies.get(c))==true){
                             tmpDot.setDead(true);
                             Enemy tmpEnemy = enemies.get(c);
                             tmpEnemy.incrementHP(-1);
@@ -263,7 +260,7 @@ public class Engine implements KeyListener{
 
                 //Check to see if dot is bad and hitting player
                 if(tmpDot.isBad()){
-                    if(this.isHitting(tmpDot, pl)){
+                    if(this.checkHit(tmpDot, pl)){
                         if(pl.getHP()<1)
                             panel.setLose(true);
                         if(!pl.isShielded())
@@ -310,7 +307,7 @@ public class Engine implements KeyListener{
      * @return
      *  True if Dot is in Character's bounds, False if not.
      */
-    public boolean isHitting(Dot d, Character c){
+    public boolean checkHit(Dot d, Character c){
         boolean b = false;
         int dx = d.getX();
         int dy = d.getY();

@@ -25,7 +25,7 @@ import java.util.*;
  */
 public class Enemy extends Character{
 
-    private String name, moveFile;
+    private String moveFile;
     private Image image;
     private int hp, hpTotal, x, y, xSize, ySize, dotX, dotY, moveNum;
     private EnemyParser enPar;
@@ -36,15 +36,11 @@ public class Enemy extends Character{
     /**
      * The default enemy constructor
      * @param mv
-     *  The string direction to move in
+     *  The string location of the enemy's move file
      * @param xx
      *  The initial x-coordinate spawn point
      * @param yy
      *  The initial y-coordinate spawn point
-     * @param xs
-     *  The x-size of the enemy
-     * @param ys
-     *  The y-size of the enemy
      */
     public Enemy(String mv, int xx, int yy){
         x=xx;
