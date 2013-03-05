@@ -1,10 +1,12 @@
 The Floppy Game
 ================
 
+This is just a simple game I created in my free time.
 In this game, try to dodge/shield against the bullets while killing enemies.
 Shielding from bullets and firing lasers increases your ships heat.
 If your ship overheats it will no longer be able to move.
 If your ship runs out of energy it will not be able to shield or fire.
+Energy is measured by the purple bars, while heat is measured by the orange.
 The game currently only has two levels in it.
 
 
@@ -20,6 +22,9 @@ L    - vents heat
 -----------------
 Building the game
 
-This is just a simple game I created in my free time.
-To build it, simply use ant on the file "ant.xml" with the "dist" flag.
+To build it, simply use ant on the file "build.xml" with the "dist" flag.
+For example: "ant dist" or "ant -f build.xml dist" would work (ant searches for build.xml automatically).
 The game should be located in the "dist" directory after building.
+
+To run the game from the command line, simply execute "java -jar TheFloppyGame.jar" while in the "dist" directory.
+
